@@ -1,0 +1,38 @@
+// Projects data - ONLY from resume
+export const projects = [
+  {
+    title: 'NexGenMusic – AI-Based Music Generation System',
+    category: 'AI Application',
+    description: 'Developed a Django-based AI application generating music from user mood and prompts.',
+    features: [
+      'AI-generated music',
+      'AI-generated metadata',
+      'Dynamic playlists',
+      'Responsive UI',
+      'Backend optimization',
+    ],
+    stack: ['Django', 'HTML', 'CSS', 'JavaScript'],
+    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80',
+    github: 'https://github.com/nish-ML',
+    demo: '',
+  },
+  {
+    title: 'Rakshak AI – Personal Safety & Assistance System',
+    category: 'AI Safety',
+    description: 'AI-powered personal safety application with multiple safety features.',
+    features: [
+      'Shake to SOS',
+      'Safe Travel',
+      'AI Translator',
+      'SignBridge',
+      'Emergency Card',
+      'Real-time alerts',
+      'Location sharing',
+      'Admin Dashboard',
+    ],
+    stack: ['React', 'Tailwind CSS', 'Backend APIs'],
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80',
+    github: 'https://github.com/nish-ML',
+    demo: '',
+  },
+];

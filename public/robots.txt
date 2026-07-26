@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nishanth-portfolio.vercel.app/sitemap.xml

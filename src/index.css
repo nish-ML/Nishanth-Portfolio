@@ -1,0 +1,391 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    color-scheme: light;
+    --primary: #FFC107;
+    --secondary: #FFD54F;
+    --accent: #FFB300;
+    --bg-primary: #FFFDF7;
+    --bg-card: #FFFFFF;
+    --text-primary: #1E293B;
+    --text-secondary: #64748B;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+
+  body {
+    background: #FFFDF7;
+    color: #1E293B;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  section {
+    scroll-margin-top: 6rem;
+  }
+
+  ::selection {
+    background: rgba(255, 193, 7, 0.3);
+    color: #1E293B;
+  }
+
+  a {
+    outline-offset: 3px;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid #FFC107;
+    outline-offset: 3px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #FFFDF7;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #FFD54F;
+    border-radius: 10px;
+    border: 2px solid #FFFDF7;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FFC107;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Premium shadows & hover transitions */
+  .premium-shadow {
+    box-shadow: 0 10px 30px -10px rgba(148, 163, 184, 0.12),
+                0 1px 3px -1px rgba(148, 163, 184, 0.08);
+    transition: box-shadow 300ms cubic-bezier(0.23, 1, 0.32, 1),
+                border-color 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
+  }
+
+  .smooth-hover {
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .smooth-hover:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Card design defaults */
+  .premium-card {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(255, 213, 79, 0.2);
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px -10px rgba(148, 163, 184, 0.12),
+                0 1px 3px -1px rgba(148, 163, 184, 0.08);
+    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 300ms cubic-bezier(0.23, 1, 0.32, 1),
+                border-color 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
+  }
+
+  @media (min-width: 768px) {
+    .premium-card {
+      padding: 3rem;
+    }
+  }
+
+  .premium-card:hover {
+    box-shadow: 0 25px 50px -15px rgba(255, 179, 0, 0.18),
+                0 0 1px rgba(255, 193, 7, 0.25);
+    border-color: rgba(255, 193, 7, 0.5);
+  }
+
+  /* 3D tilt perspective container */
+  .tilt-perspective {
+    perspective: 1000px;
+  }
+
+  /* Card glow overlay for mouse-follow effect */
+  [data-card-glow] {
+    transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* Gradient text using Yellow/Amber */
+  .gradient-text {
+    background: linear-gradient(135deg, #FFB300 0%, #FFC107 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+
+  /* Consistent yellow primary button styling */
+  .btn-primary {
+    background-color: #FFC107;
+    color: #1E293B;
+    font-weight: 600;
+    padding: 1rem 2.25rem;
+    border-radius: 9999px;
+    border: 1px solid #FFC107;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-primary:hover {
+    background-color: #FFB300;
+    border-color: #FFB300;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(255, 179, 0, 0.35);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  /* Consistent white secondary button styling */
+  .btn-secondary {
+    background-color: #FFFFFF;
+    color: #1E293B;
+    font-weight: 600;
+    padding: 1rem 2.25rem;
+    border-radius: 9999px;
+    border: 1.5px solid rgba(255, 213, 79, 0.6);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-secondary:hover {
+    background-color: #FFFDF7;
+    border-color: #FFC107;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -8px rgba(148, 163, 184, 0.2);
+  }
+
+  .btn-secondary:active {
+    transform: translateY(0);
+  }
+
+  /* Ambient light background animation */
+  .animated-bg {
+    background-color: #FFFDF7;
+    position: relative;
+  }
+
+  .animated-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 10% 20%, rgba(255, 213, 79, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 179, 0, 0.1) 0%, transparent 40%);
+    animation: moveGradient 18s ease infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Glass panel style for light theme */
+  .glass {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 213, 79, 0.25);
+  }
+
+  .skill-card {
+    position: relative;
+  }
+
+  .loading {
+    animation: spin 1s linear infinite;
+  }
+
+  .fade-up {
+    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Custom button transitions */
+  .magnetic-hover {
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .magnetic-hover:hover {
+    transform: scale(1.05);
+  }
+
+  /* Outline text for creative typography watermarks */
+  .outline-text {
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 193, 7, 0.15);
+  }
+
+  .outline-text-dark {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(30, 41, 59, 0.08);
+  }
+
+  /* Glowing blobs behind cards */
+  .glowing-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.15;
+    mix-blend-mode: multiply;
+    animation: float-blob 20s infinite alternate ease-in-out;
+  }
+}
+
+/* Keyframes outside layers (they don't affect cascade) */
+@keyframes moveGradient {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05) translate(10px, -10px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-blob {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -50px) scale(1.2);
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes frostAppear {
+  0% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes warmGlow {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loader {
+  width: 90px;
+  height: 24px;
+  padding: 2px 0;
+  box-sizing: border-box;
+  display: flex;
+  animation: l5-0 3s infinite steps(6);
+  background:
+    linear-gradient(#fff 0 0) 0 0/0% 100% no-repeat,
+    radial-gradient(circle 3px, #eeee89 90%, #0000) 0 0/20% 100%
+    #222;
+  overflow: hidden;
+}
+
+.loader::before {
+  content: "";
+  width: 20px;
+  transform: translate(-100%);
+  border-radius: 50%;
+  background: #ffff2d;
+  animation:
+    l5-1 .25s .153s infinite steps(5) alternate,
+    l5-2  3s        infinite linear;
+}
+
+@keyframes l5-1 {
+  0% {
+    clip-path: polygon(50% 50%, 100% 0, 100% 0, 0 0, 0 100%, 100% 100%, 100% 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 100% 65%, 100% 0, 0 0, 0 100%, 100% 100%, 100% 35%);
+  }
+}
+
+@keyframes l5-2 {
+  100% {
+    transform: translate(90px);
+  }
+}
+
+@keyframes l5-0 {
+  100% {
+    background-size: 120% 100%, 20% 100%;
+  }
+}
