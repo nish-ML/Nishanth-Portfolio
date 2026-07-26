@@ -19,7 +19,7 @@ function LoaderScreen({ onComplete }) {
           onComplete?.();
         }
       }, 500);
-    }, 5000);
+    }, 2500);
 
     return () => {
       clearTimeout(timer);

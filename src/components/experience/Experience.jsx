@@ -22,7 +22,7 @@ function ExperienceCard({ exp, index }) {
     <motion.div
       variants={itemVariants}
       ref={cardRef}
-      className="w-full md:w-[calc(50%-3.5rem)] bg-white border-2 border-[#FFD54F]/25 premium-shadow rounded-[2rem] p-8 sm:p-10 md:p-12 group relative z-20 overflow-hidden"
+      className="w-full md:w-[calc(50%-3.5rem)] bg-white border-2 border-[#FFD54F]/25 premium-shadow rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 md:p-10 lg:p-12 group relative z-20 overflow-hidden"
     >
       <div data-card-glow className="absolute inset-0 opacity-0 pointer-events-none z-0 rounded-[2rem]" />
       <div className="flex flex-col items-center gap-4 mb-6 text-center w-full">
@@ -99,9 +99,9 @@ function Experience() {
   };
 
   return (
-    <section id="experience" className="py-[120px] relative overflow-hidden bg-[#FFD54F]/5">
+    <section id="experience" className="py-16 sm:py-20 md:py-[120px] relative overflow-hidden bg-[#FFD54F]/5">
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-0 flex items-center justify-center">
-        <span className="outline-text text-[15rem] sm:text-[22rem] lg:text-[30rem] font-black opacity-10 leading-none select-none tracking-tighter rotate-[-6deg] translate-y-[-10%]">
+        <span className="outline-text text-[10rem] sm:text-[22rem] lg:text-[30rem] font-black opacity-10 leading-none select-none tracking-tighter rotate-[-6deg] translate-y-[-10%]">
           JOURNEY
         </span>
       </div>
@@ -109,13 +109,13 @@ function Experience() {
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#FFD54F]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/3 right-0 w-96 h-96 bg-[#FFC107]/5 rounded-full blur-3xl" />
 
-      <div className="max-w-[1280px] mx-auto px-8 sm:px-12 relative z-10">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-[90px]"
+          className="text-center mb-10 md:mb-[90px]"
         >
           <span className="inline-block px-4 py-2 bg-[#FFD54F]/20 border border-[#FFC107]/30 rounded-full text-xs font-bold text-[#FFB300] uppercase tracking-wider mb-4">
             Professional Journey
@@ -135,7 +135,7 @@ function Experience() {
         >
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#FFB300] via-[#FFD54F] to-[#FFB300] md:-translate-x-1/2 hidden md:block" />
 
-          <div className="space-y-24 relative">
+          <div className="space-y-12 sm:space-y-16 md:space-y-24 relative">
             {experience.map((exp, index) => {
               const isEven = index % 2 === 0;
               return (
@@ -161,7 +161,7 @@ function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-32 md:mt-40 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto pb-10"
+          className="mt-16 sm:mt-20 md:mt-40 grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto pb-10"
         >
           <ExperienceStatCard value={experience.length} label="Internships" />
           <ExperienceStatCard value="4+" label="Months Experience" />

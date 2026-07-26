@@ -62,13 +62,13 @@ function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-[1280px] mx-auto px-8 sm:px-12">
-        <div className="flex items-center justify-between h-20">
+      <nav className="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <motion.a
             href="#hero"
             whileHover={{ scale: 1.03 }}
-            className="text-2xl font-bold relative group flex items-center gap-0.5 text-[#1E293B]"
+            className="text-xl sm:text-2xl font-bold relative group flex items-center gap-0.5 text-[#1E293B]"
           >
             <span className="gradient-text font-black">Nishanth</span>
             <span className="text-[#FFB300]">.</span>
@@ -130,7 +130,7 @@ function Navbar() {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden w-10 h-10 rounded-xl bg-white border border-[#FFD54F]/30 flex items-center justify-center text-[#1E293B] hover:bg-[#FFFDF7] transition-all"
+            className="lg:hidden w-11 h-11 rounded-xl bg-white border border-[#FFD54F]/30 flex items-center justify-center text-[#1E293B] hover:bg-[#FFFDF7] transition-all"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <FiX className="text-xl" /> : <FiMenu className="text-xl" />}
@@ -149,7 +149,7 @@ function Navbar() {
               exit={{ opacity: 0 }}
               onClick={() => setMobileOpen(false)}
               className="fixed inset-0 bg-slate-900/30 backdrop-blur-sm lg:hidden"
-              style={{ top: '5rem' }}
+              style={{ top: '4rem' }}
             />
 
             {/* Menu Panel */}
@@ -158,7 +158,7 @@ function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed right-0 top-20 bottom-0 w-80 max-w-[85vw] bg-white border-l border-[#FFD54F]/20 shadow-2xl lg:hidden overflow-y-auto"
+              className="fixed right-0 top-16 sm:top-20 bottom-0 w-80 max-w-[85vw] bg-white border-l border-[#FFD54F]/20 shadow-2xl lg:hidden overflow-y-auto"
             >
               <div className="p-6 space-y-6">
                 {/* Navigation Links */}

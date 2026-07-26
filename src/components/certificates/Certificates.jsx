@@ -22,7 +22,7 @@ function CertCard({ cert }) {
     <motion.div
       variants={cardVariants}
       ref={cardRef}
-      className="bg-white border-2 border-[#FFD54F]/25 premium-shadow rounded-[2rem] p-8 sm:p-10 group flex flex-col items-center justify-between h-full text-center relative overflow-hidden"
+      className="bg-white border-2 border-[#FFD54F]/25 premium-shadow rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 md:p-10 group flex flex-col items-center justify-between h-full text-center relative overflow-hidden"
     >
       <div data-card-glow className="absolute inset-0 opacity-0 pointer-events-none z-0 rounded-[2rem]" />
       <div className="w-14 h-14 rounded-2xl bg-[#FFD54F]/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform text-[#FFB300] mx-auto">
@@ -66,9 +66,9 @@ function Certificates() {
   };
 
   return (
-    <section id="certifications" className="py-[120px] relative overflow-hidden bg-white">
+    <section id="certifications" className="py-16 sm:py-20 md:py-[120px] relative overflow-hidden bg-white">
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-0 flex items-center justify-center">
-        <span className="outline-text text-[15rem] sm:text-[22rem] lg:text-[30rem] font-black opacity-10 leading-none select-none tracking-tighter rotate-[6deg] translate-y-[-10%]">
+        <span className="outline-text text-[10rem] sm:text-[22rem] lg:text-[30rem] font-black opacity-10 leading-none select-none tracking-tighter rotate-[6deg] translate-y-[-10%]">
           CREDENTIALS
         </span>
       </div>
@@ -76,13 +76,13 @@ function Certificates() {
       <div className="absolute top-0 left-0 w-96 h-96 bg-[#FFD54F]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#FFC107]/5 rounded-full blur-3xl" />
 
-      <div className="max-w-[1280px] mx-auto px-8 sm:px-12 relative z-10">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-[50px]"
+          className="text-center mb-8 md:mb-[50px]"
         >
           <div className="mb-10">
             <span className="inline-block px-4 py-2 bg-[#FFD54F]/20 border border-[#FFC107]/30 rounded-full text-xs font-bold text-[#FFB300] uppercase tracking-wider mb-4">
@@ -115,7 +115,7 @@ function Certificates() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-20 text-center bg-slate-50 border border-[#FFD54F]/20 premium-shadow rounded-3xl p-8 max-w-3xl mx-auto"
+          className="mt-12 md:mt-20 text-center bg-slate-50 border border-[#FFD54F]/20 premium-shadow rounded-2xl sm:rounded-3xl p-5 sm:p-8 max-w-3xl mx-auto"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <FiAward className="text-3xl text-[#FFB300]" />

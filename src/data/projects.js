@@ -35,4 +35,19 @@ export const projects = [
     github: 'https://github.com/nish-ML',
     demo: '',
   },
+  {
+    title: 'FinanceHub – Frontend Finance Application',
+    category: 'Frontend Project',
+    description: 'A modern, responsive finance dashboard frontend application.',
+    features: [
+      'Responsive UI',
+      'Modern Design',
+      'Interactive Dashboard',
+      'Performance Optimized',
+    ],
+    stack: ['React', 'Vite', 'Tailwind CSS'],
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=900&q=80',
+    github: '',
+    demo: 'https://financehub-neon.vercel.app/',
+  },
 ];

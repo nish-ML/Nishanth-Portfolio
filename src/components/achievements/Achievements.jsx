@@ -27,7 +27,7 @@ function AchievementCard({ achievement, index }) {
       key={index}
       variants={cardVariants}
       ref={cardRef}
-      className="bg-white border-2 border-[#FFD54F]/25 premium-shadow rounded-[2rem] p-8 sm:p-10 md:p-12 group flex flex-col items-center justify-between h-full text-center relative overflow-hidden"
+      className="bg-white border-2 border-[#FFD54F]/25 premium-shadow rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 md:p-10 lg:p-12 group flex flex-col items-center justify-between h-full text-center relative overflow-hidden"
     >
       <div data-card-glow className="absolute inset-0 opacity-0 pointer-events-none z-0 rounded-[2rem]" />
       <div className="flex flex-col items-center gap-3 mb-6 text-center w-full">
@@ -68,9 +68,9 @@ function Achievements() {
   };
 
   return (
-    <section id="achievements" className="py-[120px] relative overflow-hidden bg-[#FFD54F]/5">
+    <section id="achievements" className="py-16 sm:py-20 md:py-[120px] relative overflow-hidden bg-[#FFD54F]/5">
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-0 flex items-center justify-center">
-        <span className="outline-text text-[15rem] sm:text-[22rem] lg:text-[30rem] font-black opacity-10 leading-none select-none tracking-tighter rotate-[8deg] translate-y-[-10%]">
+        <span className="outline-text text-[10rem] sm:text-[22rem] lg:text-[30rem] font-black opacity-10 leading-none select-none tracking-tighter rotate-[8deg] translate-y-[-10%]">
           MILESTONES
         </span>
       </div>
@@ -78,13 +78,13 @@ function Achievements() {
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#FFD54F]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-[#FFC107]/5 rounded-full blur-3xl" />
 
-      <div className="max-w-[1280px] mx-auto px-8 sm:px-12 relative z-10">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-[90px]"
+          className="text-center mb-10 md:mb-[90px]"
         >
           <span className="inline-block px-4 py-2 bg-[#FFD54F]/20 border border-[#FFC107]/30 rounded-full text-xs font-bold text-[#FFB300] uppercase tracking-wider mb-4">
             Milestones
@@ -112,7 +112,7 @@ function Achievements() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-20 bg-white border border-[#FFD54F]/25 premium-shadow rounded-3xl p-8 max-w-4xl mx-auto"
+          className="mt-12 md:mt-20 bg-white border border-[#FFD54F]/25 premium-shadow rounded-2xl sm:rounded-3xl p-5 sm:p-8 max-w-4xl mx-auto"
         >
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="w-20 h-20 rounded-full bg-[#FFD54F]/20 flex items-center justify-center flex-shrink-0 text-[#FFB300] border border-[#FFC107]/10">

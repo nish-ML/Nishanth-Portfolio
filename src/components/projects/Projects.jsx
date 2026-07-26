@@ -22,10 +22,10 @@ function ProjectCard({ project, index }) {
       key={index}
       variants={cardVariants}
       ref={cardRef}
-      className="bg-white border-2 border-[#FFD54F]/20 premium-shadow rounded-[2rem] overflow-hidden group h-full flex flex-col relative"
+      className="bg-white border-2 border-[#FFD54F]/20 premium-shadow rounded-2xl sm:rounded-[2rem] overflow-hidden group h-full flex flex-col relative"
     >
       <div data-card-glow className="absolute inset-0 opacity-0 pointer-events-none z-0 rounded-[2rem]" />
-      <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#FFD54F]/10 to-[#FFC107]/10 flex-shrink-0">
+      <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden bg-gradient-to-br from-[#FFD54F]/10 to-[#FFC107]/10 flex-shrink-0">
         <img
           src={project.image}
           alt={project.title}
@@ -66,7 +66,7 @@ function ProjectCard({ project, index }) {
         </div>
       </div>
 
-      <div className="p-8 sm:p-10 md:p-12 space-y-8 flex-1 flex flex-col justify-between items-center text-center">
+      <div className="p-5 sm:p-8 md:p-10 lg:p-12 space-y-6 sm:space-y-8 flex-1 flex flex-col justify-between items-center text-center">
         <div className="space-y-6 w-full flex flex-col items-center">
           <div className="space-y-3 w-full flex flex-col items-center">
             <div className="flex flex-col items-center gap-2 mb-3 text-center w-full">
@@ -159,9 +159,9 @@ function Projects() {
   };
 
   return (
-    <section id="projects" className="py-[120px] relative overflow-hidden bg-white">
+    <section id="projects" className="py-16 sm:py-20 md:py-[120px] relative overflow-hidden bg-white">
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-0 flex items-center justify-center">
-        <span className="outline-text text-[15rem] sm:text-[22rem] lg:text-[30rem] font-black opacity-10 leading-none select-none tracking-tighter rotate-[8deg] translate-y-[-10%]">
+        <span className="outline-text text-[10rem] sm:text-[22rem] lg:text-[30rem] font-black opacity-10 leading-none select-none tracking-tighter rotate-[8deg] translate-y-[-10%]">
           WORK
         </span>
       </div>
@@ -169,13 +169,13 @@ function Projects() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFD54F]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FFC107]/5 rounded-full blur-3xl" />
 
-      <div className="max-w-[1280px] mx-auto px-8 sm:px-12 relative z-10">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-[50px]"
+          className="text-center mb-8 md:mb-[50px]"
         >
           <div className="mb-10">
             <span className="inline-block px-4 py-2 bg-[#FFD54F]/20 border border-[#FFC107]/30 rounded-full text-xs font-bold text-[#FFB300] uppercase tracking-wider mb-4">

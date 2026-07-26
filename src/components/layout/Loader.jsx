@@ -2,8 +2,7 @@ import { motion, useAnimation, animate } from 'framer-motion';
 import { useEffect, useRef, useCallback } from 'react';
 
 const DOT_COUNT = 9;
-const DOT_SIZE = 12;
-const WAVE_DURATION = 3500;
+const WAVE_DURATION = 1200;
 
 function Loader({ onComplete }) {
   const dotsRef = useRef([]);
@@ -35,7 +34,7 @@ function Loader({ onComplete }) {
             boxShadow: '0 0 0 0 rgba(255, 213, 79, 0)',
           },
           {
-            duration: 0.7,
+            duration: 0.35,
             ease: [0.32, 0, 0.67, 1],
             onComplete: resolve,
           }
@@ -48,19 +47,19 @@ function Loader({ onComplete }) {
     await sphereControls.start({
       scale: [0, 1.25, 1],
       opacity: 1,
-      transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.2, ease: [0.22, 1, 0.36, 1] },
     });
 
     await sphereControls.start({
       scale: [1, 1.12, 1],
-      transition: { duration: 0.25, ease: 'easeInOut' },
+      transition: { duration: 0.12, ease: 'easeInOut' },
     });
 
     await sphereControls.start({
       scale: 250,
       opacity: 0,
       transition: {
-        duration: 1.1,
+        duration: 0.55,
         ease: [0.76, 0, 0.24, 1],
       },
     });
@@ -110,15 +109,15 @@ function Loader({ onComplete }) {
       className="fixed inset-0 z-[200] flex items-center justify-center"
       style={{ backgroundColor: '#FFFDF7' }}
     >
-      <div className="flex items-center" style={{ gap: '32px' }}>
+      <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
         {Array.from({ length: DOT_COUNT }, (_, i) => (
           <div
             key={i}
             ref={(el) => (dotsRef.current[i] = el)}
             className="rounded-full"
             style={{
-              width: DOT_SIZE,
-              height: DOT_SIZE,
+              width: 8,
+              height: 8,
               backgroundColor: '#FFD54F',
               opacity: 0.2,
               willChange: 'transform, opacity',

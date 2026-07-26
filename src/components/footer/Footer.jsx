@@ -3,7 +3,7 @@ function Footer() {
     <footer className="relative border-t border-[#FFC107]/30 bg-[#FFFDF7]">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#FFC107]/60 to-transparent" />
 
-      <div className="max-w-[1280px] mx-auto px-8 sm:px-12 py-16">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 py-8 sm:py-12 md:py-16">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 text-sm text-[#64748B] font-medium">
           <a
             href="mailto:nish010906@gmail.com"

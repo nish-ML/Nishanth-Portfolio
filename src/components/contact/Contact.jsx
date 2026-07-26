@@ -122,9 +122,9 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-[120px] relative overflow-hidden bg-white">
+    <section id="contact" className="py-16 sm:py-20 md:py-[120px] relative overflow-hidden bg-white">
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-0 flex items-center justify-center">
-        <span className="outline-text text-[15rem] sm:text-[22rem] lg:text-[30rem] font-black opacity-10 leading-none select-none tracking-tighter rotate-[6deg] translate-y-[-10%]">
+        <span className="outline-text text-[10rem] sm:text-[22rem] lg:text-[30rem] font-black opacity-10 leading-none select-none tracking-tighter rotate-[6deg] translate-y-[-10%]">
           CONNECT
         </span>
       </div>
@@ -132,19 +132,19 @@ function Contact() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFD54F]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FFC107]/5 rounded-full blur-3xl" />
 
-      <div className="max-w-[1280px] mx-auto px-8 sm:px-12 relative z-10">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-[64px]"
+          className="text-center mb-10 md:mb-[64px]"
         >
           <div className="mb-10">
             <span className="inline-block px-4 py-2 bg-[#FFD54F]/20 border border-[#FFC107]/30 rounded-full text-xs font-bold text-[#FFB300] uppercase tracking-wider mb-4">
               Get In Touch
             </span>
-            <h2 className="text-5xl sm:text-7xl lg:text-8xl font-black mb-6 text-[#1E293B] uppercase tracking-tighter leading-none">
+            <h2 className="text-4xl sm:text-7xl lg:text-8xl font-black mb-6 text-[#1E293B] uppercase tracking-tighter leading-none">
               Let's <span className="block outline-text-dark text-[#FFB300]">Collaborate</span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#FFB300] to-[#FFC107] mx-auto rounded-full" />
@@ -182,7 +182,7 @@ function Contact() {
                 Social Links
               </motion.h3>
 
-              <div className="flex gap-3">
+              <div className="grid grid-cols-3 sm:grid-cols-5 gap-3">
                 {[
                   { icon: FiGithub, label: 'GitHub', href: personalInfo.github },
                   { icon: FiLinkedin, label: 'LinkedIn', href: personalInfo.linkedin },
@@ -202,7 +202,7 @@ function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               ref={connectCardRef}
-              className="bg-white border-2 border-[#FFD54F]/25 premium-shadow rounded-[2rem] p-8 sm:p-10 md:p-12 relative overflow-hidden"
+              className="bg-white border-2 border-[#FFD54F]/25 premium-shadow rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 md:p-10 lg:p-12 relative overflow-hidden"
             >
               <div data-card-glow className="absolute inset-0 opacity-0 pointer-events-none z-0 rounded-[2rem]" />
               <div className="mb-8">
