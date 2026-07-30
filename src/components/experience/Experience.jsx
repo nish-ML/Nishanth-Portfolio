@@ -16,13 +16,13 @@ const itemVariants = {
 
 function ExperienceCard({ exp, index }) {
   const cardRef = useCardTilt();
-  const year = exp.period.match(/\d{4}/)?.[0] || '2024';
+  const year = exp.duration.match(/\d{4}/)?.[0] || '2024';
 
   return (
     <motion.div
       variants={itemVariants}
       ref={cardRef}
-      className="w-full md:w-[calc(50%-3.5rem)] bg-white border-2 border-[#FFD54F]/25 premium-shadow rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 md:p-10 lg:p-12 group relative z-20 overflow-hidden"
+      className="w-full bg-white border-2 border-[#FFD54F]/25 premium-shadow rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 md:p-10 lg:p-12 group relative z-20 overflow-hidden"
     >
       <div data-card-glow className="absolute inset-0 opacity-0 pointer-events-none z-0 rounded-[2rem]" />
       <div className="flex flex-col items-center gap-4 mb-6 text-center w-full">
@@ -32,7 +32,7 @@ function ExperienceCard({ exp, index }) {
               {year}
             </span>
             <h3 className="text-2xl font-black text-[#1E293B] group-hover:text-[#FFB300] transition-colors duration-200 uppercase tracking-tight text-center">
-              {exp.title}
+              {exp.role}
             </h3>
           </div>
           <p className="text-lg text-[#FFB300] font-black mb-2 uppercase tracking-wide">
@@ -40,7 +40,7 @@ function ExperienceCard({ exp, index }) {
           </p>
           <div className="flex items-center gap-2 text-slate-400 justify-center">
             <FiCalendar className="text-sm" />
-            <span className="text-sm font-semibold">{exp.period}</span>
+            <span className="text-sm font-semibold">{exp.duration}</span>
           </div>
         </div>
 
@@ -49,12 +49,16 @@ function ExperienceCard({ exp, index }) {
         </div>
       </div>
 
+      <p className="text-slate-500 font-medium text-center text-sm leading-relaxed mb-4">
+        {exp.description}
+      </p>
+
       <div className="space-y-3 w-full flex flex-col items-center">
         <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider text-center">
-          Key Responsibilities:
+          Key Contributions:
         </h4>
         <ul className="space-y-3 w-full">
-          {exp.responsibilities.map((responsibility, i) => (
+          {exp.contributions.map((contribution, i) => (
             <motion.li
               key={i}
               initial={{ opacity: 0, y: 15 }}
@@ -64,7 +68,7 @@ function ExperienceCard({ exp, index }) {
               className="flex items-start justify-center gap-3 text-slate-500 font-semibold text-center w-full"
             >
               <FiCheckCircle className="text-[#FFC107] mt-1 flex-shrink-0" />
-              <span>{responsibility}</span>
+              <span>{contribution}</span>
             </motion.li>
           ))}
         </ul>
@@ -121,40 +125,38 @@ function Experience() {
             Professional Journey
           </span>
           <h2 className="text-4xl sm:text-5xl font-black mb-6 text-[#1E293B]">
-            Work Experience
+            Intern Experience
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#FFB300] to-[#FFC107] mx-auto rounded-full" />
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          className="max-w-4xl mx-auto relative"
-        >
+        <div className="max-w-4xl mx-auto relative">
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#FFB300] via-[#FFD54F] to-[#FFB300] md:-translate-x-1/2 hidden md:block" />
 
           <div className="space-y-12 sm:space-y-16 md:space-y-24 relative">
             {experience.map((exp, index) => {
-              const isEven = index % 2 === 0;
+              const isLeft = index % 2 === 0;
               return (
-                <div
-                  key={index}
-                  className={`flex flex-col md:flex-row items-center justify-between ${isEven ? 'md:flex-row-reverse' : ''} relative gap-8 md:gap-0`}
-                >
-                  <div className="absolute left-8 md:left-1/2 top-8 w-14 h-14 rounded-full bg-gradient-to-br from-[#FFC107] to-[#FFD54F] hidden md:flex items-center justify-center md:-translate-x-1/2 z-10 shadow-md text-[#1E293B] border border-[#FFC107]/20">
+                <div key={index} className={`relative flex flex-col md:flex-row items-start ${isLeft ? '' : 'md:flex-row-reverse'}`}>
+                  <div className="hidden md:flex absolute left-1/2 top-8 w-14 h-14 rounded-full bg-gradient-to-br from-[#FFC107] to-[#FFD54F] -translate-x-1/2 z-10 shadow-md text-[#1E293B] border border-[#FFC107]/20 items-center justify-center">
                     <FiBriefcase className="text-xl" />
                   </div>
 
-                  <ExperienceCard exp={exp} index={index} />
-
-                  <div className="hidden md:block md:w-[calc(50%-3.5rem)]" />
+                  <div className={`w-full ${isLeft ? 'md:pr-16 md:text-right md:items-end' : 'md:pl-16'} md:w-1/2`}>
+                    <motion.div
+                      variants={containerVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, margin: '-100px' }}
+                    >
+                      <ExperienceCard exp={exp} index={index} />
+                    </motion.div>
+                  </div>
                 </div>
               );
             })}
           </div>
-        </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}

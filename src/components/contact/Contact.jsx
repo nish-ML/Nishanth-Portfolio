@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiFileText, FiDownload, FiCheckCircle } from 'react-icons/fi';
+import { FiMail, FiPhone, FiGithub, FiLinkedin, FiFileText, FiDownload, FiCheckCircle } from 'react-icons/fi';
 import { SiCodechef } from 'react-icons/si';
-import { personalInfo, education } from '../../data/portfolio';
+import { personalInfo } from '../../data/portfolio';
 import { useCardTilt } from '../../hooks/useCardTilt';
 
 function ContactInfoCard({ card, itemVariants }) {
@@ -90,14 +90,6 @@ function Contact() {
       href: 'https://www.codechef.com/users/nish010906',
       color: 'bg-[#FFD54F]/20 text-[#FFB300]',
     },
-  ];
-
-  const availabilityItems = [
-    'Available for Internships',
-    'AI & ML Projects',
-    'Web Development',
-    'Open Source Collaboration',
-    'Freelance Opportunities',
   ];
 
   const containerVariants = {
@@ -215,48 +207,21 @@ function Contact() {
               </div>
 
               <div className="mb-8">
-                <p className="text-xs font-bold text-[#FFB300] uppercase tracking-wider mb-4">Availability</p>
+                <p className="text-xs font-bold text-[#FFB300] uppercase tracking-wider mb-4">What You Can Expect</p>
                 <div className="space-y-3">
-                  {availabilityItems.map((item, index) => (
+                  {[
+                    'Professional Communication',
+                    'Timely Project Delivery',
+                    'Innovative Solutions',
+                    'Continuous Learning',
+                    'Collaborative Mindset',
+                    'Quality-Focused Development',
+                  ].map((item, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <FiCheckCircle className="text-[#FFB300] text-lg flex-shrink-0" />
                       <span className="text-slate-600 font-medium text-sm">{item}</span>
                     </div>
                   ))}
-                </div>
-              </div>
-
-              <div className="mb-8">
-                <p className="text-xs font-bold text-[#FFB300] uppercase tracking-wider mb-4">Quick Information</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div className="p-4 bg-slate-50 border border-[#FFD54F]/15 rounded-2xl">
-                    <div className="flex items-center gap-2 mb-1">
-                      <FiMapPin className="text-[#FFB300] text-sm" />
-                      <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Location</span>
-                    </div>
-                    <p className="text-slate-700 font-semibold text-sm">{personalInfo.location}</p>
-                  </div>
-                  <div className="p-4 bg-slate-50 border border-[#FFD54F]/15 rounded-2xl">
-                    <div className="flex items-center gap-2 mb-1">
-                      <FiFileText className="text-[#FFB300] text-sm" />
-                      <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Degree</span>
-                    </div>
-                    <p className="text-slate-700 font-semibold text-sm">{education.degree}</p>
-                  </div>
-                  <div className="p-4 bg-slate-50 border border-[#FFD54F]/15 rounded-2xl">
-                    <div className="flex items-center gap-2 mb-1">
-                      <FiCheckCircle className="text-[#FFB300] text-sm" />
-                      <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">College</span>
-                    </div>
-                    <p className="text-slate-700 font-semibold text-sm">{education.college}</p>
-                  </div>
-                  <div className="p-4 bg-slate-50 border border-[#FFD54F]/15 rounded-2xl">
-                    <div className="flex items-center gap-2 mb-1">
-                      <FiCheckCircle className="text-[#FFB300] text-sm" />
-                      <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">CGPA</span>
-                    </div>
-                    <p className="text-slate-700 font-semibold text-sm">{education.cgpa}</p>
-                  </div>
                 </div>
               </div>
 

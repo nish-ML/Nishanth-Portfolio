@@ -34,9 +34,7 @@ function AchievementCard({ achievement, index }) {
         <div className="w-16 h-16 rounded-2xl bg-[#FFD54F]/20 flex items-center justify-center group-hover:scale-110 transition-transform text-[#FFB300] mx-auto">
           <Icon className="text-3xl" />
         </div>
-        <span className="px-4 py-2 bg-[#FFD54F]/20 border border-[#FFD54F]/40 rounded-full text-xs font-bold text-[#FFB300] inline-block">
-          {achievement.year}
-        </span>
+
       </div>
 
       <div className="space-y-3 w-full flex flex-col items-center text-center">

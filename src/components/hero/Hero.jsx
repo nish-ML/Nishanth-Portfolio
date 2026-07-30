@@ -59,17 +59,6 @@ function Hero() {
           {/* Left Content (7 columns on large screen) */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-10 text-center flex flex-col items-center justify-center w-full">
             <motion.div variants={itemVariants} className="space-y-4 w-full flex flex-col items-center">
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, type: 'spring' }}
-                className="inline-block"
-              >
-                <span className="px-4 py-2 bg-[#FFD54F]/20 border border-[#FFC107]/30 rounded-full text-xs font-bold text-[#FFB300] uppercase tracking-wider">
-                  👋 Welcome to my portfolio
-                </span>
-              </motion.div>
-
               <h1 className="text-3xl sm:text-6xl lg:text-8xl xl:text-[5.5rem] font-black text-[#1E293B] leading-[0.9] uppercase tracking-tighter text-center">
                 Hi, I'm <br className="sm:hidden" />
                 <span className="block text-[#FFC107] outline-text-dark font-black tracking-tighter select-all break-all sm:whitespace-nowrap">{personalInfo.name}</span>

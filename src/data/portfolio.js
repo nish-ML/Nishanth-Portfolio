@@ -72,24 +72,26 @@ export const skills = [
 // Experience
 export const experience = [
   {
-    title: 'AI Development Intern',
     company: 'Infosys Springboard',
-    period: 'October 2025 – December 2025',
-    responsibilities: [
-      'Developed an AI-based music composition system',
-      'Worked on AI logic integration',
-      'Web development',
-      'Hands-on AI workflow experience',
+    role: 'AI Development Intern',
+    duration: 'October 2025 – December 2025',
+    description: 'Worked on AI-powered solutions, focusing on machine learning models and web application development.',
+    contributions: [
+      'Developed an AI-based music composition system using deep learning',
+      'Integrated AI logic with web interfaces for real-time interaction',
+      'Built responsive frontend components for the application',
+      'Gained hands-on experience in end-to-end AI workflows',
     ],
   },
   {
-    title: 'Web Development Intern',
     company: 'Repute Digital Business Agency',
-    period: 'December 2025 – January 2026',
-    responsibilities: [
-      'Worked on real-time web development projects',
-      'Demonstrated strong learning ability',
-      'Self-motivated contributor',
+    role: 'Web Development Intern',
+    duration: 'December 2025 – January 2026',
+    description: 'Contributed to real-time web development projects, collaborating on both frontend and backend tasks.',
+    contributions: [
+      'Developed and maintained responsive web applications',
+      'Demonstrated strong learning ability and quick adaptation to new technologies',
+      'Collaborated as a self-motivated contributor in a team environment',
     ],
   },
 ];
@@ -99,30 +101,26 @@ export const certifications = [
   {
     title: 'AI-Based Music Composition Internship',
     issuer: 'Infosys Springboard',
-    year: '2025',
   },
   {
     title: 'Advanced C++',
     issuer: 'IIT Bombay',
-    score: '80%',
-    year: '2025',
   },
   {
     title: 'Java Programming',
     issuer: 'IIT Bombay',
-    score: '77.5%',
-    year: '2025',
   },
   {
     title: 'PostgreSQL / RDBMS',
     issuer: 'IIT Bombay',
-    score: '90%',
-    year: '2025',
   },
   {
     title: 'Generative AI with AWS',
     issuer: 'AWS',
-    year: '2025',
+  },
+  {
+    title: 'Introduction to Industry 4.0 and Industrial Internet of Things',
+    issuer: 'NPTEL',
   },
 ];
 
@@ -130,12 +128,10 @@ export const certifications = [
 export const achievements = [
   {
     title: 'IEEE National Level Hackathon',
-    description: 'Participant – HackITSnova\'25',
-    year: '2025',
+    description: 'Participated in HackITSnova\'25, an IEEE national-level hackathon, collaborating on innovative solutions under competitive time constraints.',
   },
   {
     title: 'AI, Cloud & Generative AI Workshops',
-    description: 'Participated in multiple technical workshops',
-    year: '2025',
+    description: 'Attended multiple technical workshops on Artificial Intelligence, Cloud Computing, and Generative AI to stay current with emerging technologies.',
   },
 ];
