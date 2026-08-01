@@ -144,11 +144,7 @@ function About() {
                   ))}
                 </div>
 
-                {/* Core Focus */}
                 <div className="w-full mt-8">
-                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 text-center">
-                    Core Focus
-                  </h4>
                   <div className="flex flex-wrap justify-center gap-2.5">
                     {coreFocus.map((tech, index) => (
                       <motion.span
@@ -220,9 +216,6 @@ function About() {
 
                 {/* Current Focus - replaces Academic Progress */}
                 <div className="mt-8 w-full">
-                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">
-                    🎯 Current Focus
-                  </h4>
                   <div className="flex flex-col gap-3">
                     {currentFocus.map((item, index) => (
                       <motion.div
